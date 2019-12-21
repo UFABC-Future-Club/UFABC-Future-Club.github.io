@@ -1,0 +1,22 @@
+.banner {
+    width: 100vw;
+    margin-left: -15px;
+}
+
+.btn-banner {
+    width: 25%;
+    font-size: 20px;
+    position: relative;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-body {
+    width: 100%;
+}
+
+.text {
+    color: #6d6d6d;
+    text-align: justify;
+}
