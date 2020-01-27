@@ -1,22 +1,255 @@
+/* Criando variável para cor */
+:root {
+    --green: #49ba9b;
+    --blue: #1d2530;
+    --yellow: #fdcd07
+}
+
+.bg-blue {
+    background: var(--blue);
+    color: #FFF;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+    background-color: transparent
+}
+
+a:hover {
+    color: var(--green);
+    text-decoration: underline
+}
+
+
+.text-white-75 {
+    color: rgba(255, 255, 255, .75)
+}
+
+
+.page-section {
+    padding: 8rem 0
+}
+
+
+.navbar-toggler {
+    border-radius: 0;
+    border: none;
+  }
+
+  .navbar-toggler:active, .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+      background: rgba(0, 0, 0, .05);
+      transition: ease-in-out .5s background-color;
+  }
+
+#mainNav {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    background-color: #fff;
+    transition: background-color .2s ease
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    color: #212529
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: #6c757d;
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .75rem 0
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: var(--green)
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    color: var(--green) !important
+}
+
+@media (min-width:992px) {
+    #mainNav {
+        box-shadow: none;
+        background-color:transparent;
+    }
+    
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, .7)
+    }
+
+    #mainNav .navbar-brand:hover {
+        color: #fff
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: rgba(255, 255, 255, .7);
+        padding: 0 1rem
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: #fff
+    }
+
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0
+    }
+
+    #mainNav.navbar-scrolled {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        background-color: #fff
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand, #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+        color: #212529
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand:hover, #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+        color: var(--green)
+    }
+}
+
 .banner {
-    width: 100vw;
-    margin-left: -15px;
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    animation: backgroundBlink 4s infinite alternate;
+    background: var(--green);
 }
 
-.btn-banner {
-    width: 25%;
-    font-size: 20px;
+@keyframes backgroundBlink {
+    0% {
+        background: #49ba9b;
+    }
+    100% {
+        background: #1d2530;
+    }
+}
+
+.banner h1 {
+    font-size: 2.25rem
+}
+
+@media (min-width:992px) {
+    .banner {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 72px;
+        padding-bottom: 0
+    }
+
+    .banner p {
+        font-size: 1.15rem
+    }
+
+    .banner h1 {
+        font-size: 3rem
+    }
+}
+
+@media (min-width:1200px) {
+    .banner h1 {
+        font-size: 3.5rem
+    }
+}
+
+#portfolio .container-fluid .portfolio-box {
     position: relative;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block
 }
 
-.img-body {
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    color: var(--blue);
+    background: var(--green);
+    transition: opacity .25s ease;
+    text-align: center
 }
 
-.text {
-    color: #6d6d6d;
-    text-align: justify;
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name {
+    font-size: 1.2rem
+}
+
+#portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
+    opacity: 1
+}
+
+
+.bubble {
+    width: 60px;
+    height: 60px;
+    background: var(--yellow);
+    position: absolute;
+}
+
+.x1 {
+    transform: scale(0.9);
+    opacity: 0.3;
+    animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 0.6;
+    animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3 {
+    left: 30%;
+    transform: scale(0.8);
+    opacity: 0.4;
+    animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4 {
+    left: 45%;
+    transform: scale(0.75);
+    opacity: 0.45;
+    animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x5 {
+    left: 60%;
+    animation: moveclouds 22s linear infinite, sideWays 6s ease-in-out infinite alternate;
+
+    transform: scale(0.8);
+    opacity: 0.2; 
+}
+
+
+@keyframes moveclouds {
+    0% { 
+        top: 90%;
+    }
+    100% { 
+        top: -20%;
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
 }
